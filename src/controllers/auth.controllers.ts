@@ -39,6 +39,8 @@ export class AuthController {
     const { access_token, refresh_token } = await this.authService.login(
       req.user,
     );
+    console.log('access:', access_token);
+    console.log('refresh:', refresh_token);
 
     res.setHeader('Set-Cookie', [access_token, refresh_token.cookie]);
     res.send({
