@@ -11,7 +11,7 @@ async function bootstrap() {
   app.use(cookieParser());
   app.enableCors({
     allowedHeaders: ['content-type'],
-    origin: 'http://localhost:3004',
+    origin: ['http://localhost:3004', 'https://plants-ecommerce.vercel.app'],
     credentials: true,
   });
 
