@@ -8,12 +8,10 @@ dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
   app.enableCors({
-    allowedHeaders: 'content-type',
-    origin: [
-      'https://plants-ecommerce.vercel.app/',
-      'https://plants-ecommerce-3r3simab2-violetevergs-projects.vercel.app/',
-    ],
+    origin: ['http://localhost:3004', 'https://plants-ecommerce.vercel.app/'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   });
 
