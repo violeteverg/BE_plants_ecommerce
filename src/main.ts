@@ -8,14 +8,14 @@ dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use(cookieParser());
 
   app.enableCors({
-    origin: ['http://localhost:3004', 'https://plants-ecommerce.vercel.app/'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
+    origin: '*',
+    methods: 'GET, PUT, POST, DELETE',
+    allowedHeaders: 'Content-Type, Authorization',
   });
 
-  app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(3007);
 }
