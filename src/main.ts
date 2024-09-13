@@ -16,7 +16,7 @@ async function bootstrap() {
   //   credentials: true,
   // });
   app.enableCors({
-    origin: 'https://plants-ecommerce.vercel.app',
+    origin: ['https://plants-ecommerce.vercel.app', 'http://localhost:3004'],
     methods: 'GET, PUT, POST, DELETE',
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true,
