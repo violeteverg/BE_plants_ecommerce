@@ -6,6 +6,7 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
+console.log('>>>>', process.env.JWT_SECRET_TOKEN);
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor() {
