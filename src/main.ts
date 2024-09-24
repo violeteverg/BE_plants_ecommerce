@@ -8,10 +8,10 @@ dotenv.config();
 
 async function bootstrap() {
   const corsConfig = {
-    // origin: ['https://plants-ecommerce.vercel.app', 'http://localhost:3004'],
-    origin: 'https://plants-ecommerce.vercel.app',
-    // methods: 'GET, PUT, POST, DELETE',
-    // allowedHeaders: 'Content-Type, Authorization',
+    origin: ['https://plants-ecommerce.vercel.app', 'http://localhost:3004'],
+    // origin: 'https://plants-ecommerce.vercel.app',
+    methods: 'GET, PUT, POST, DELETE, OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization',
     credentials: true,
   };
   const app = await NestFactory.create(AppModule);
