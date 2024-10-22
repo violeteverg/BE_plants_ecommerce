@@ -42,15 +42,11 @@ export class AuthController {
     console.log('access:', access_token);
     console.log('refresh:', refresh_token);
 
-    // res.setHeader('Set-Cookie', [access_token, refresh_token.cookie]);
-    res.cookie('Authentication', access_token, {
-      secure: true,
-      sameSite: 'none',
-      expires: new Date(Number(new Date()) + 24 * 60 * 60 * 1000 * 30),
-    });
+    res.setHeader('Set-Cookie', [access_token, refresh_token.cookie]);
     res.send({
       message: 'successfully login',
       isLogin: true,
+      token: access_token,
     });
   }
 }
