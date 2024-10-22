@@ -14,7 +14,7 @@ export class AuthController {
     const { access_token, refresh_token } =
       await this.authService.register(createUserDto);
 
-    res.setHeader('Set-Cookie', [access_token, refresh_token.cookie]);
+    res.setHeader('Set-Cookie', [access_token.cookie, refresh_token.cookie]);
     res.send({
       message: 'successfully register',
     });
@@ -41,12 +41,13 @@ export class AuthController {
     );
     console.log('access:', access_token);
     console.log('refresh:', refresh_token);
+    // console.log('test');
 
-    res.setHeader('Set-Cookie', [access_token, refresh_token.cookie]);
+    res.setHeader('Set-Cookie', [access_token.cookie, refresh_token.cookie]);
     res.send({
       message: 'successfully login',
       isLogin: true,
-      token: access_token,
+      token: access_token.token,
     });
   }
 }

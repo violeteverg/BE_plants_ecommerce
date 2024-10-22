@@ -40,7 +40,9 @@ export class CartController {
   }
 
   private getTokenFromCookies(req: Request): string {
+    console.log(req.cookies);
     const token = req.cookies['Authentication'];
+    console.log(token, 'cart controller');
     if (!token) {
       throw new UnauthorizedException('No authentication token found');
     }
