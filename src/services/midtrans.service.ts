@@ -46,10 +46,10 @@ export class MidtransService {
         secure: true,
       },
       callbacks: {
-        finish: 'http://localhost:3004/order',
-        unfinish: 'http://localhost:3004/plants',
-        error: 'http://localhost:3004/pots',
-        cancel: 'http://localhost:3004/succulents',
+        finish: 'https://plants-ecommerce.vercel.app/order',
+        unfinish: 'https://plants-ecommerce.vercel.app/product',
+        error: 'https://plants-ecommerce.vercel.app/pots',
+        cancel: 'https://plants-ecommerce.vercel.app/succulents',
       },
     };
 
