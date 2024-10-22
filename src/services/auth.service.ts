@@ -55,7 +55,8 @@ export class AuthService {
       secret: process.env.JWT_SECRET_TOKEN,
       expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME,
     });
-    return `Authentication=${token}; HttpOnly; Secure; SameSite=None; Path=/; Max-Age=${process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME}`;
+    // return `Authentication=${token}; HttpOnly=false; Secure=false; SameSite=None; Path=/; Max-Age=${process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME}`;
+    return token;
   }
 
   public getCookieWithJwtRefreshToken(userId: number) {
